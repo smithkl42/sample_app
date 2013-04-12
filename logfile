@@ -1,0 +1,20 @@
+LOG:  database system was shut down at 2013-04-11 19:49:01 PDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  role "postgres" does not exist
+ERROR:  column "datconfig" does not exist at character 76
+STATEMENT:  SELECT db.oid, datname, db.dattablespace AS spcoid, spcname, datallowconn, datconfig, datacl, pg_encoding_to_char(encoding) AS serverencoding, pg_get_userbyid(datdba) AS datowner,has_database_privilege(db.oid, 'CREATE') as cancreate, 
+	current_setting('default_tablespace') AS default_tablespace
+	  FROM pg_database db
+	  LEFT OUTER JOIN pg_tablespace ta ON db.dattablespace=ta.OID
+	 ORDER BY datname
+ERROR:  column "spclocation" does not exist at character 25
+STATEMENT:  SELECT ts.oid, spcname, spclocation, pg_get_userbyid(spcowner) as spcuser, spcacl, pg_catalog.shobj_description(oid, 'pg_tablespace') AS description FROM pg_tablespace ts
+	 ORDER BY spcname
+ERROR:  column "datconfig" does not exist at character 76
+STATEMENT:  SELECT db.oid, datname, db.dattablespace AS spcoid, spcname, datallowconn, datconfig, datacl, pg_encoding_to_char(encoding) AS serverencoding, pg_get_userbyid(datdba) AS datowner,has_database_privilege(db.oid, 'CREATE') as cancreate, 
+	current_setting('default_tablespace') AS default_tablespace
+	  FROM pg_database db
+	  LEFT OUTER JOIN pg_tablespace ta ON db.dattablespace=ta.OID
+	 ORDER BY datname
+FATAL:  database "db" does not exist
