@@ -6,7 +6,8 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-  gem 'rspec-rails', '2.11.0'
+  gem 'rspec-rails'
+  gem 'guard-rspec'
 end
 
 
@@ -26,6 +27,8 @@ gem 'jquery-rails', '2.0.2'
 
 group :test do
   gem 'capybara', '1.1.2'
+  gem 'rb-fsevent', :require => false
+  gem 'growl'
 end
 
 gem 'pg', '0.12.2'
